@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -177,10 +176,11 @@
 <body>
 <div id="header">
     <div class="logo">
-        <img src="{% static "ductasia.gif" %}" height="50" width="100">
+        {% load static %}
+        <img src="{% static 'ductasia.jpg' %}" height="50" width="100" alt="">
     </div>
     <div style="text-align: left;">
-        <p>"{% static "ductasia.gif" %}"</p>
+        <p>"{% static 'ductasia.jpg' %}"</p>
         <p>บริษัท ดัคท์เอเชียเอ็นจิเนียริ่ง จำกัด</p>
         <p>41 หมู่ที่ 6 ตำบลคลองสอง อำเภอคลองหลวง</p>
         <p>จังหวัดปทุมธานี 12120</p>

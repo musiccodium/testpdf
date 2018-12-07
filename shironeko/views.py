@@ -17,7 +17,6 @@ class PreviewSalaryTemplates(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request):
-
         html_string = render_to_string(template_name='salary_guarantee_template.html')
         response = HttpResponse(content_type='application/pdf;')
         response['Content-Disposition'] = 'inline; filename=salary_guarantee_form.pdf'

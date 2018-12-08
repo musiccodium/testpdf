@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,187 +5,185 @@
     <title>รายงานรับรองเงินเดือน</title>
     <style type="text/css">
 
-    .th-sarabun {
-      font-family: 'THSarabunNew', sans-serif;
-    }
+        .th-sarabun {
+            font-family: 'THSarabunNew', sans-serif;
+        }
 
-    html {
-      font-size: 14px;
-    }
+        html {
+            font-size: 14px;
+        }
 
-    body {
-      font-family: "THSarabunNew";
-    }
-
-    p {
-      margin-top: 0.2rem !important;
-      margin-bottom: 0.2rem !important;
-    }
-
-    @page {
-      size: A4;
-      margin: 7rem 0 5rem 0;
-    }
-
-    @page :first {
-      margin-top: 0;
-    }
-
-    @media print {
-
-        html,
         body {
-            width: 210mm;
-            height: 297mm;
-        }
-        #body {
-            padding: 9rem 3rem 0 3rem;
+            font-family: "THSarabunNew";
         }
 
-        #body .memo-id p {
-            margin: 0;
-            font-weight: bold;
+        p {
+            margin-top: 0.2rem !important;
+            margin-bottom: 0.2rem !important;
         }
 
-        #body .memo-date {
-            width: 65%;
-            float: left;
-            font-weight: bold;
+        @page {
+            size: A4;
+            margin: 7rem 0 5rem 0;
         }
 
-        #body .memo-date p {
-            margin: 0;
+        @page :first {
+            margin-top: 0;
         }
 
-        #body .title {
-            margin-top: 3.5rem;
-            margin-bottom: 0.5 !important;
-        }
+        @media print {
 
-        #body .title p {
-            margin: 0;
-            line-height: 1rem;
-        }
+            html,
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+            #body {
+                padding: 9rem 3rem 0 3rem;
+            }
 
-        #body .title table tr td ul {
-            padding: 0;
-            list-style-type: none;
-            margin: 0;
-        }
+            #body .memo-id p {
+                margin: 0;
+                font-weight: bold;
+            }
 
-        #body .attachment .label {
-            float: left;
-            width: 10%;
-        }
+            #body .memo-date {
+                width: 65%;
+                float: left;
+                font-weight: bold;
+            }
 
-        #body .attachment .documents {
-            float: left;
-            width: 90%;
-            margin-bottom: 1rem;
-        }
+            #body .memo-date p {
+                margin: 0;
+            }
 
-        #body .content {
-            margin-top: 6rem;
-            font-size: 42px
-        }
+            #body .title {
+                margin-top: 3.5rem;
+                margin-bottom: 0.5 !important;
+            }
 
-        #body .content p {
-            line-height: 1.2rem;
-        }
+            #body .title p {
+                margin: 0;
+                line-height: 1rem;
+            }
 
-        #body .content table {
-            border: 1px solid #ccc;
-            border-collapse: collapse;
-        }
+            #body .title table tr td ul {
+                padding: 0;
+                list-style-type: none;
+                margin: 0;
+            }
 
-        #body .content td {
-            border: 1px solid #333333;
-        }
+            #body .attachment .label {
+                float: left;
+                width: 10%;
+            }
 
-        #body .bottom {
-            margin-top: 4rem;
-            font-size: 24px;
-            position: relative;
-            margin-right: 3rem;
-        }
+            #body .attachment .documents {
+                float: left;
+                width: 90%;
+                margin-bottom: 1rem;
+            }
 
-        #body .bottom p {
-            margin: 0;
-        }
+            #body .content {
+                margin-top: 6rem;
+                font-size: 42px
+            }
 
-        #body .bottom .signature {
-            background: white;
-            margin-top: 0.75rem;
-            margin-bottom: 0.75rem;
-            height: 2rem;
-        }
+            #body .content p {
+                line-height: 1.2rem;
+            }
 
-        #body .bottom .signature .signature-img {
-            max-width: 100%;
-            max-height: 100%;
-            mix-blend-mode: hard-light;
-        }
+            #body .content table {
+                border: 1px solid #ccc;
+                border-collapse: collapse;
+            }
 
-        /* start vertical */
-        #body .vertical {
-            width: 100%;
-            float: left;
-        }
+            #body .content td {
+                border: 1px solid #333333;
+            }
 
-        #body .vertical .executive-block {
-            display: block;
-            clear: both;
-            overflow: hidden;
-            height: 7rem;
-        }
+            #body .bottom {
+                margin-top: 4rem;
+                font-size: 24px;
+                position: relative;
+                margin-right: 3rem;
+            }
 
-        #body .vertical .choice {
-            width: 20%;
-        }
+            #body .bottom p {
+                margin: 0;
+            }
 
-        #body .vertical .executive-name {
-            width: 80%;
-            margin-top: 1.1rem;
-            text-align: center;
-        }
-        /* end vertical */
-        #header {
-            position: fixed;
-            top: 2rem;
-            right: 3rem;
-            font-size: 25px;
-        }
+            #body .bottom .signature {
+                background: white;
+                margin-top: 0.75rem;
+                margin-bottom: 0.75rem;
+                height: 2rem;
+            }
 
-        #header .logo img {
-            position: fixed;
-            top: 2rem;
-            left: 3rem;
-            height: 135px;
-        }
+            #body .bottom .signature .signature-img {
+                max-width: 100%;
+                max-height: 100%;
+                mix-blend-mode: hard-light;
+            }
 
-        #footer {
-            position: fixed;
-            bottom: 2rem;
-            left: 3.5rem;
-            right: 6rem;
-            text-align: right;
+            /* start vertical */
+            #body .vertical {
+                width: 100%;
+                float: left;
+            }
+
+            #body .vertical .executive-block {
+                display: block;
+                clear: both;
+                overflow: hidden;
+                height: 7rem;
+            }
+
+            #body .vertical .choice {
+                width: 20%;
+            }
+
+            #body .vertical .executive-name {
+                width: 80%;
+                margin-top: 1.1rem;
+                text-align: center;
+            }
+            /* end vertical */
+            #header {
+                position: fixed;
+                top: 2rem;
+                right: 3rem;
+                font-size: 25px;
+            }
+
+            #header .logo img {
+                position: fixed;
+                top: 2rem;
+                left: 3rem;
+                height: 135px;
+            }
+
+            #footer {
+                position: fixed;
+                bottom: 2rem;
+                left: 3.5rem;
+                right: 6rem;
+                text-align: right;
+            }
         }
-    }
     </style>
 </head>
 <body>
 <div id="header">
     <div class="logo">
-{#       <img src="https://i.imgur.com/1NuMD8Q.gif">#}
-        <img src="{% static "images/ductasia.gif" %}">
-{#        <img src="../shironeko/static_files/images/ductasia.gif">#}
+        {% load static %}
+        <img src={% static 'ductasia.png' %} height="50" width="100" >
     </div>
     <div style="text-align: left;">
-        <p>"{% static "images/ductasia.gif" %}"</p>
-     <p>บริษัท ดัคท์เอเชียเอ็นจิเนียริ่ง จำกัด</p>
-    <p>41 หมู่ที่ 6 ตำบลคลองสอง อำเภอคลองหลวง</p>
-    <p>จังหวัดปทุมธานี 12120</p>
-    <p>โทร 02-9016814-5</p>
+        <p>บริษัท ดัคท์เอเชียเอ็นจิเนียริ่ง จำกัด</p>
+        <p>41 หมู่ที่ 6 ตำบลคลองสอง อำเภอคลองหลวง</p>
+        <p>จังหวัดปทุมธานี 12120</p>
+        <p>โทร 02-9016814-5</p>
     </div>
 </div>
 <div id="body">
@@ -196,8 +193,8 @@
         </div>
     </div>
     <div class="bottom th-sarabun">
-       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;หนังสือฉบับนี้ให้ไว้
-           เพื่อแสดงว่า {{ name }} เป็นพนักงานของ{{ company_name }} ตำแหน่ง พนักงาน{{ labour_type }} อัตราเงินเดือน {{ salary }} บาท ({{ salary_word }}บาทถ้วน) โดยเริ่มทำงานตั้งแต่ วันที่ {{ start_date }} จนถึงปัจจุบัน</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;หนังสือฉบับนี้ให้ไว้
+            เพื่อแสดงว่า {{ name }} เป็นพนักงานของ{{ company_name }} ตำแหน่ง พนักงาน{{ labour_type }} อัตราเงินเดือน {{ salary }} บาท ({{ salary_word }}บาทถ้วน) โดยเริ่มทำงานตั้งแต่ วันที่ {{ start_date }} จนถึงปัจจุบัน</p>
         <br>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ออกให้ ณ วันที่ {{ now }}</p>
     </div>
